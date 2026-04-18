@@ -135,3 +135,4 @@ C:\Users\merha\OneDrive\Desktop\databaseqed\jonson\jonson\bin\Debug\net9.0\runti
 C:\Users\merha\OneDrive\Desktop\databaseqed\jonson\jonson\bin\Debug\net9.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\merha\OneDrive\Desktop\databaseqed\jonson\jonson\obj\Debug\net9.0\jonson.csproj.AssemblyReference.cache
 C:\Users\merha\OneDrive\Desktop\databaseqed\jonson\jonson\obj\Debug\net9.0\jonson.csproj.Up2Date
+C:\Users\merha\OneDrive\Desktop\databaseqed\jonson\jonson\obj\Debug\net9.0\jonson.sourcelink.json

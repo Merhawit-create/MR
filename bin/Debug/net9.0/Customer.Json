@@ -10,5 +10,23 @@
     "CustomerName": "mili",
     "CustomerEmail": "LysuKwIlLyMrLmwhLS8=",
     "City": "Asmara"
+  },
+  {
+    "CustomerId": 3,
+    "CustomerName": "Du",
+    "CustomerEmail": "Dyc=",
+    "City": "Hagaz"
+  },
+  {
+    "CustomerId": 4,
+    "CustomerName": "Sada",
+    "CustomerEmail": "ESMmIwIlIy8rLmwhLS8=",
+    "City": "Hagaz"
+  },
+  {
+    "CustomerId": 5,
+    "CustomerName": "Merhawit",
+    "CustomerEmail": "DycwAiUvIysu",
+    "City": "Keren"
   }
 ]

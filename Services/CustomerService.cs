@@ -30,7 +30,9 @@ public class CustomerService
         }
 
         var json = await File.ReadAllTextAsync(Filename);
-        var customers = JsonSerializer.Deserialize<List<Customer>>(json, _options);
+        var customers = JsonSerializer.Deserialize<List<Customer>>(json, _options)
+                        ?? new List<Customer>();
+        // Dekryptera email efter läsning
         foreach (var customer in customers)
         {
             if (!string.IsNullOrEmpty(customer.CustomerEmail))
@@ -39,12 +41,12 @@ public class CustomerService
             }
         }
         // Säker fallback om JSON är tom eller felaktig
-        return customers ?? new List<Customer>();
+        return customers ;
     }
 
     // Spara listan till JSON filen
     private async Task SaveAsync(List<Customer> customers)
-    {
+    {      
         var toSave = customers.Select(customer => new Customer
         {
             CustomerId = customer.CustomerId,
@@ -81,9 +83,9 @@ public class CustomerService
         {
             Console.WriteLine("Customer not found");
             return;
+        }
 
-
-            if (!string.IsNullOrWhiteSpace(customerName))
+        if (!string.IsNullOrWhiteSpace(customerName))
             {
                 customer.CustomerName = customerName;
             }
@@ -99,7 +101,7 @@ public class CustomerService
             }
 
             await SaveAsync(customers);
-        }
+        
     }
 
     public async Task DeleteAsync(int customerId)
@@ -143,7 +145,17 @@ public class CustomerService
             var customerEmail = Console.ReadLine() ?? "";
             Console.WriteLine("Enter City: ");
             var customerCity = Console.ReadLine() ?? "";
+            if (string.IsNullOrWhiteSpace(customerName))
+            {
+                Console.WriteLine("Name is required.");
+                return;
+            }
 
+            if (string.IsNullOrWhiteSpace(customerEmail))
+            {
+                Console.WriteLine("Email is required.");
+                return;
+            }
             var customer = new Customer()
             {
                 CustomerName = customerName,
